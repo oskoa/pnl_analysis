@@ -96,7 +96,7 @@ def main():
                             buy_side.sell(current_trade.quant)
                             buy_dict[current_trade.symb].pop()
                             sell_dict[current_trade.symb].pop()
-    print total_pnl
+    print(total_pnl)
 
 
 if __name__ == '__main__':
