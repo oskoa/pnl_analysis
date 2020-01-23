@@ -9,7 +9,7 @@ def timer(fn):
         result = fn(*args, **kwargs)
         end = time()
         elapsed = end-start
-        print 'The program took {0:.2f} seconds.'.format(elapsed)
+        print('The program took {0:.2f} seconds.'.format(elapsed))
     return inner
 
 
