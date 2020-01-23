@@ -1,5 +1,8 @@
 """ Modue for Utilities """
 
+from functools import wraps
+from time import time
+
 
 def timer(fn):
     """ Decorator for tracking time """
