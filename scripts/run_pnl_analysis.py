@@ -14,7 +14,7 @@ def main():
     file_dir = args.file_dir
 
     trades_gen = gen_clean_data(file_dir)
-    _ = trades_gen.next()
+    _ = next(trades_gen)
 
     trades_queue = deque()
     pairs_queue = deque()
