@@ -46,14 +46,14 @@ def main():
                 if current_trade.quant < buy_side.quant:
                     current_pair = Pair(buy_side, current_trade)
                     pairs_queue.append(current_pair)
-                    print current_pair
+                    print(current_pair)
                     total_pnl += current_pair.pnl
                     buy_side.sell(current_pair.quant)
                     sell_dict[current_trade.symb].pop()
                 elif current_trade.quant == buy_side.quant:
                     current_pair = Pair(buy_side, current_trade)
                     pairs_queue.append(current_pair)
-                    print current_pair
+                    print(current_pair)
                     total_pnl += current_pair.pnl
                     buy_side.sell(current_trade.quant)
                     buy_dict[current_trade.symb].pop()
@@ -62,7 +62,7 @@ def main():
                     while current_trade.quant > buy_side.quant and buy_dict[current_trade.symb].size() > 1:
                         current_pair = Pair(buy_side, current_trade)
                         pairs_queue.append(current_pair)
-                        print current_pair
+                        print(current_pair)
                         total_pnl += current_pair.pnl
                         buy_side.sell(current_pair.quant)
                         current_trade.sell(current_pair.quant)
@@ -73,7 +73,7 @@ def main():
                     if current_trade.quant > buy_dict[current_trade.symb].peek().quant:
                         current_pair = Pair(buy_side, current_trade)
                         pairs_queue.append(current_pair)
-                        print current_pair
+                        print(current_pair)
                         total_pnl += current_pair.pnl
                         buy_dict[current_trade.symb].pop()
                         current_trade.sell(current_pair.quant)
@@ -84,14 +84,14 @@ def main():
                         if current_trade.quant < buy_side.quant:
                             current_pair = Pair(buy_side, current_trade)
                             pairs_queue.append(current_pair)
-                            print current_pair
+                            print(current_pair)
                             total_pnl += current_pair.pnl
                             buy_side.sell(current_trade.quant)
                             sell_dict[current_trade.symb].pop()
                         elif current_trade.quant == buy_side.quant:
                             current_pair = Pair(buy_side, current_trade)
                             pairs_queue.append(current_pair)
-                            print current_pair
+                            print(current_pair)
                             total_pnl += current_pair.pnl
                             buy_side.sell(current_trade.quant)
                             buy_dict[current_trade.symb].pop()
@@ -100,5 +100,5 @@ def main():
 
 
 if __name__ == '__main__':
-    print 'OPEN_TIME, CLOSE_TIME, SYMBOL, QUANTITY, PNL, OPEN_SIDE, CLOSE_SIDE, OPEN_PRICE, CLOSE_PRICE'
+    print('OPEN_TIME, CLOSE_TIME, SYMBOL, QUANTITY, PNL, OPEN_SIDE, CLOSE_SIDE, OPEN_PRICE, CLOSE_PRICE')
     main()
